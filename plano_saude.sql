@@ -22,3 +22,15 @@ INSERT INTO cliente (nome,
 SELECT * FROM cliente; 
 
 
+CREATE TABLE dependente (id_dependente serial CONSTRAINT pk_id_dependente PRIMARY KEY NOT NULL,
+                        cliente int NOT NULL,
+                        dependente int NOT NULL,
+                        CONSTRAINT fk_cliente FOREIGN KEY (cliente) REFERENCES cliente(id_cliente),
+                        CONSTRAINT fk_dependente FOREIGN KEY (dependente) REFERENCES cliente(id_cliente));
+
+
+INSERT INTO dependente (cliente, 
+                        dependente) VALUES (1,
+                                            2);
+
+SELECT * FROM dependente; 

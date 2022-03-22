@@ -49,3 +49,20 @@ INSERT INTO produto (ans_codigo,
                                 200);
 
 SELECT * FROM produto;
+
+
+CREATE TABLE contrato (id_contrato serial CONSTRAINT pk_id_contrato PRIMARY KEY NOT NULL,
+                    cliente int NOT NULL,
+                    produto int NOT NULL,
+                    dt_inicio_vigencia date NOT NULL,
+                    CONSTRAINT fk_cliente FOREIGN KEY (cliente) REFERENCES cliente(id_cliente),
+                    CONSTRAINT fk_produto FOREIGN KEY (produto) REFERENCES produto(id_produto));
+
+
+INSERT INTO contrato (cliente, 
+                    produto, 
+                    dt_inicio_vigencia) VALUES (1,
+                                                1,
+                                                '24-01-2023');
+
+SELECT * FROM contrato; 

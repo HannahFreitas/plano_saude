@@ -33,4 +33,19 @@ INSERT INTO dependente (cliente,
                         dependente) VALUES (1,
                                             2);
 
-SELECT * FROM dependente; 
+SELECT * FROM dependente;
+
+
+CREATE TABLE produto (id_produto serial CONSTRAINT pk_id_produto PRIMARY KEY NOT NULL,
+                    ans_codigo int NOT NULL,
+                    descricao varchar(255),
+                    valor money NOT NULL);
+
+
+INSERT INTO produto (ans_codigo,
+                    descricao,
+                    valor) VALUES (10101012,
+                                'Consulta em consultório',
+                                200);
+
+SELECT * FROM produto;
